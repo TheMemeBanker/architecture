@@ -1,0 +1,26 @@
+{
+  "title": "arc_registry",
+  "total_handshakes": 6,
+  "types": {
+    "projects": "all things built with rig, arc's agent & llm framework",
+    "handshakes": "projects & teams that successfully completed the arc handshake vetting process",
+    "ecosystem_partners": "organizations and infrastructure providers supporting builders in the arc handshake program ecosystem"
+  },
+  "tags": ["ai_layer", "creative", "onchain", "defi", "microcontrollers", "handshake", "forge", "ecosystem_partner", "grant", "tech"],
+  "entries": [
+    { "id": "ryzome", "name": "ryzome", "type": "project", "token": "no_token", "tags": ["ai_layer"], "link": "https://ryzome.ai", "summary": "your ideas, amplified. one canvas, infinite possibilities — knowledge that comes alive with AI that understands context and connections." },
+    { "id": "soulgraph", "name": "soulgraph", "type": "handshake", "token": "token_live", "tags": ["ai_layer", "creative", "handshake"], "summary": "create AI agents that remember and grow through experience — a studio for meaningful AI relationships plus open-source memory/personality infrastructure." },
+    { "id": "listen-rs", "name": "listen-rs", "type": "handshake", "token": "token_live", "tags": ["ai_layer", "onchain", "defi", "handshake"], "link": "https://www.listen-rs.com/", "summary": "a rust framework for blockchain actions focused on complex defi operations and trading automation; with rig, a toolkit for defai applications." },
+    { "id": "askjimmy", "name": "askjimmy", "type": "handshake", "token": "token_live", "tags": ["ai_layer", "onchain", "defi", "handshake", "forge"], "link": "https://www.askjimmy.xyz/", "summary": "ai-driven trading platform for autonomous finance agents; jimmy was the first arc forge launch, with dlmm-backed liquidity and arc routing." },
+    { "id": "fabelis-ai", "name": "fabelis AI", "type": "handshake", "token": "token_live", "tags": ["ai_layer", "onchain", "handshake"], "link": "https://fabelis.ai/", "summary": "an AI agent framework built on rig extending into social agents, storytelling, and mcp integration via mcp-core and agent repositories." },
+    { "id": "agenttank", "name": "agenttank", "type": "handshake", "token": "token_live", "tags": ["ai_layer", "creative", "onchain", "handshake"], "summary": "tank is your crypto copilot — an always-on desktop assistant merging real-time visual intelligence with agent automation across major blockchains." },
+    { "id": "solana-foundation", "name": "solana foundation", "type": "ecosystem_partner", "tags": ["ecosystem_partner", "grant"], "summary": "partnership to accelerate AI innovation on solana: targeted rfps, arc grants, mentorship, and reusable rig agent toolkits." },
+    { "id": "hyperbolic", "name": "hyperbolic", "type": "ecosystem_partner", "tags": ["ecosystem_partner", "tech"], "summary": "gpu rental + verifiable inference platform; handshake cohort receives $10 in credits (~2m tokens); posp verification, 1b+ tokens daily." },
+    { "id": "eternalai", "name": "eternalAI", "type": "ecosystem_partner", "tags": ["ecosystem_partner", "tech"], "summary": "decentralized on-chain AI running models like llama and hermes directly on blockchain networks; free api credits for handshake cohorts." },
+    { "id": "sendai", "name": "sendAI", "type": "ecosystem_partner", "tags": ["ecosystem_partner", "tech"], "summary": "accelerates AI adoption on solana with grants, bounties, and the solana agent kit." },
+    { "id": "shuttle-dev", "name": "shuttle dev", "type": "ecosystem_partner", "tags": ["ecosystem_partner", "tech"], "summary": "rust-native backend and cloud deployment, making it easy to scale AI applications built with rig." },
+    { "id": "arbitrum", "name": "arbitrum", "type": "ecosystem_partner", "tags": ["ecosystem_partner", "grant"], "summary": "ethereum layer 2; the stylus grant initiative encourages rust developers to build AI applications using rig on arbitrum." },
+    { "id": "abstract", "name": "abstract", "type": "ecosystem_partner", "tags": ["ecosystem_partner", "grant"], "summary": "consumer-centric zk layer 2; evm support for rig brings ai-powered dapps to a broader audience." },
+    { "id": "mongodb", "name": "mongodb", "type": "ecosystem_partner", "tags": ["ecosystem_partner", "tech"], "summary": "production-grade vector storage via atlas; discounted credits and dedicated developer support for arc cohort participants." }
+  ]
+}

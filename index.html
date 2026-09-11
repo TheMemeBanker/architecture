@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>/architecture</title>
-<meta name="description" content="discover the core components of our ecosystem and how they work together to power innovative AI applications and semantic software.">
+<title>arc_registry</title>
+<meta name="description" content="the arc registry tracks projects built with rig, vetted handshakes, and ecosystem partners.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
@@ -17,62 +17,42 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;overflow-x:hidden}
-body{background:var(--paper);color:var(--ink);font-family:var(--mono);font-size:14px;line-height:1.7;overflow-x:hidden}
-/* concentric arc watermark */
+body{position:relative;background:var(--paper);color:var(--ink);font-family:var(--mono);font-size:14px;line-height:1.7;overflow-x:hidden}
 .arcs{position:fixed;inset:0;z-index:0;pointer-events:none;display:flex;justify-content:center;overflow:hidden}
 .arcs svg{opacity:.5;min-width:1600px}
-/* green squiggles */
 .deco{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none}
 .squig{position:absolute}
-body{position:relative}
-.wrap{position:relative;z-index:1;max-width:880px;margin:0 auto;padding:64px 24px 90px}
-header.hero{text-align:center;margin-bottom:44px}
-h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,5vw,42px);letter-spacing:.01em;margin-bottom:20px}
-.hero p{color:var(--ink-soft);max-width:640px;margin:0 auto;text-align:center}
-.providers{margin:38px 0 6px;text-align:center}
-.providers .plabel{font-size:11px;letter-spacing:.14em;color:var(--ink-faint);display:block;margin-bottom:14px}
-.providers .row{display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:center;align-items:center}
-.providers .row span{font-family:var(--serif);font-weight:600;font-size:17px;color:var(--ink);opacity:.82}
-.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:34px 0 18px}
-.search{flex:0 1 220px;background:transparent;border:1px solid var(--line);border-radius:7px;padding:7px 12px;font:inherit;color:var(--ink)}
-.search::placeholder{color:var(--ink-faint)}
-.search:focus{outline:none;border-color:var(--ink-soft)}
-.toolbar .sp{flex:1}
-.chip{font:inherit;font-size:12.5px;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:7px;padding:6px 12px;cursor:pointer;transition:background .15s}
+.wrap{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:64px 24px 90px}
+header.hero{text-align:center;margin-bottom:34px}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,5vw,42px);letter-spacing:.01em;margin-bottom:8px}
+.count{color:var(--ink-soft);font-size:13px;margin-bottom:26px}
+.count b{color:var(--ink)}
+.types{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;text-align:left;max-width:900px;margin:0 auto}
+.type{border:1px solid var(--line);border-radius:11px;padding:14px 16px;background:rgba(233,233,231,.72)}
+.type h2{font-family:var(--serif);font-weight:600;font-size:16px;margin-bottom:4px}
+.type p{color:var(--ink-soft);font-size:12.5px;line-height:1.6}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:36px 0 22px}
+.chip{font:inherit;font-size:12px;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:5px 13px;cursor:pointer;transition:background .15s,color .15s}
 .chip:hover{background:rgba(0,31,63,.06)}
-.chip.green{background:var(--green);border-color:var(--green);color:#06240f}
-.chip.green:hover{background:var(--green-soft)}
-/* module cards */
-.mod{background:var(--card);color:var(--card-ink);border-radius:12px;padding:24px 26px;margin:0 0 26px;box-shadow:0 18px 40px -22px rgba(0,31,63,.45)}
-.mod h2{font-family:var(--serif);font-weight:500;font-size:21px;margin-bottom:9px}
-.mod > p{color:var(--card-soft);margin-bottom:12px}
-.mod .ext{display:inline-block;color:var(--green);text-decoration:none;font-weight:500;margin-bottom:14px}
-.mod .ext:hover{text-decoration:underline}
-.mod .subbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;font-size:12.5px;color:var(--card-soft)}
-.mod .subbar .dot{opacity:.45}
-.expand{font:inherit;font-size:12px;color:var(--card-ink);background:transparent;border:1px solid var(--card-line);border-radius:7px;padding:5px 12px;cursor:pointer;transition:background .15s}
-.expand:hover{background:rgba(231,234,240,.08)}
-.tag-new{background:var(--green);color:#06240f;font-size:10px;font-weight:600;border-radius:5px;padding:1px 6px;vertical-align:2px;margin-left:6px}
-.body{display:none;margin-top:18px;border-top:1px solid var(--card-line);padding-top:18px}
-.mod.open .body{display:block}
-.mod.open .expand .arrow{transform:rotate(90deg)}
-.expand .arrow{display:inline-block;transition:transform .15s;margin-left:6px}
-.sub{margin-bottom:16px}
-.sub:last-child{margin-bottom:0}
-.sub h3{font-family:var(--serif);font-weight:500;font-size:15.5px;margin-bottom:4px}
-.sub p{color:var(--card-soft);font-size:13px}
-.kv{font-size:11px;letter-spacing:.12em;color:var(--green);margin:18px 0 10px}
-.kv b{color:var(--card-soft);font-weight:400}
-.nest{border-left:2px solid var(--card-line);padding-left:16px;margin:14px 0 4px}
-/* cta */
-.cta{text-align:center;margin-top:56px}
-.cta h2{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:10px}
-.cta p{color:var(--ink-soft);max-width:520px;margin:0 auto 20px}
-.cta a{display:inline-block;background:var(--ink);color:#eef2f7;text-decoration:none;border-radius:8px;padding:11px 22px;font-size:13.5px}
-.cta a:hover{opacity:.88}
-footer{margin-top:70px;text-align:center;font-size:11.5px;color:var(--ink-faint)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#eef2f7}
+.chip.on.green{background:var(--green);border-color:var(--green);color:#06240f}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.card{background:var(--card);color:var(--card-ink);border-radius:12px;padding:20px 21px;display:flex;flex-direction:column;gap:10px;box-shadow:0 18px 40px -22px rgba(0,31,63,.45)}
+.card .top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.card h3{font-family:var(--serif);font-weight:500;font-size:18px}
+.badge{font-size:10px;font-weight:600;border-radius:5px;padding:2px 8px;white-space:nowrap}
+.badge.live{background:var(--green);color:#06240f}
+.badge.none{background:rgba(231,234,240,.16);color:var(--card-soft)}
+.badge.partner{background:#c9d4f5;color:#122a5c}
+.card p{color:var(--card-soft);font-size:12.5px;flex:1}
+.card .tags{display:flex;flex-wrap:wrap;gap:6px}
+.card .tag{font-size:10.5px;color:var(--card-soft);border:1px solid var(--card-line);border-radius:5px;padding:1px 7px}
+.card a{color:var(--green);text-decoration:none;font-size:12.5px;font-weight:500}
+.card a:hover{text-decoration:underline}
+.soon{border:1px dashed var(--line);border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--ink-faint);font-size:12.5px;padding:30px 20px;background:transparent}
+footer{margin-top:64px;text-align:center;font-size:11.5px;color:var(--ink-faint)}
 .hidden{display:none !important}
-@media (max-width:560px){.wrap{padding:44px 16px 70px}.mod{padding:20px 18px}}
+@media (max-width:560px){.wrap{padding:44px 16px 70px}}
 </style>
 </head>
 <body>
@@ -86,141 +66,86 @@ footer{margin-top:70px;text-align:center;font-size:11.5px;color:var(--ink-faint)
 </svg>
 </div>
 <div class="deco" aria-hidden="true">
-<svg class="squig" style="left:-40px;top:340px" width="140" height="220" viewBox="0 0 140 220" fill="none"><path d="M120 14 C30 40 10 120 60 150 C100 175 120 195 96 212" stroke="#3ddc74" stroke-width="17" stroke-linecap="round"/></svg>
-<svg class="squig" style="right:-46px;top:520px" width="150" height="230" viewBox="0 0 150 230" fill="none"><path d="M18 16 C120 44 140 120 86 156 C46 182 30 202 56 220" stroke="#3ddc74" stroke-width="17" stroke-linecap="round"/></svg>
+<svg class="squig" style="left:-40px;top:360px" width="140" height="220" viewBox="0 0 140 220" fill="none"><path d="M120 14 C30 40 10 120 60 150 C100 175 120 195 96 212" stroke="#3ddc74" stroke-width="17" stroke-linecap="round"/></svg>
+<svg class="squig" style="right:-46px;top:640px" width="150" height="230" viewBox="0 0 150 230" fill="none"><path d="M18 16 C120 44 140 120 86 156 C46 182 30 202 56 220" stroke="#3ddc74" stroke-width="17" stroke-linecap="round"/></svg>
 </div>
 
 <div class="wrap">
   <header class="hero">
-    <h1>/architecture</h1>
-    <p>discover the core components of our ecosystem and how they work together to power innovative AI applications and semantic software. dive into the details of each module to explore its purpose, functionality, and integration within the arc framework.</p>
+    <h1>arc_registry</h1>
+    <div class="count">total handshakes: <b>6</b></div>
+    <div class="types">
+      <div class="type"><h2>projects</h2><p>all things built with rig, arc's agent &amp; llm framework</p></div>
+      <div class="type"><h2>handshakes</h2><p>projects &amp; teams that successfully completed the arc handshake vetting process</p></div>
+      <div class="type"><h2>ecosystem_partners</h2><p>organizations and infrastructure providers supporting builders in the arc handshake program ecosystem</p></div>
+    </div>
   </header>
 
-  <div class="providers">
-    <span class="plabel">model providers</span>
-    <div class="row"><span>anthropic</span><span>deepseek</span><span>gemini</span><span>ollama</span><span>openai</span><span>perplexity</span></div>
+  <div class="filters" id="filters">
+    <button class="chip green on" data-f="all">all projects</button>
+    <button class="chip" data-f="ai_layer">ai_layer</button>
+    <button class="chip" data-f="creative">creative</button>
+    <button class="chip" data-f="onchain">onchain</button>
+    <button class="chip" data-f="defi">defi</button>
+    <button class="chip" data-f="microcontrollers">microcontrollers</button>
+    <button class="chip" data-f="handshake">handshake</button>
+    <button class="chip" data-f="forge">forge</button>
+    <button class="chip" data-f="ecosystem_partner">ecosystem_partner</button>
   </div>
 
-  <div class="toolbar">
-    <input id="q" class="search" type="text" placeholder="search" aria-label="search modules">
-    <span class="sp"></span>
-    <button class="chip" id="xall">expand all</button>
-    <button class="chip green" id="call">collapse all</button>
-  </div>
+  <div class="grid" id="grid"></div>
 
-  <section class="mod" data-k="rig framework rust agents core library multi-agent wasm edge on-chain vector">
-    <h2>rig framework</h2>
-    <p>the foundational rust-based system for building and orchestrating powerful, lightweight AI agents. it provides core libraries, multi-agent support, and on-chain integrations.</p>
-    <a class="ext" href="https://github.com/0xPlaygrounds/rig" target="_blank" rel="noopener">&rarr; view rig repository</a>
-    <div class="subbar"><button class="expand">expand <span class="arrow">&rsaquo;</span></button><span>core library</span><span class="dot">&middot;</span><span>multi-agent &amp; extensibility</span></div>
-    <div class="body">
-      <div class="sub"><h3>core library</h3><p>essential utilities to create AI agents, manage prompts, handle embeddings, and maintain robust performance.</p></div>
-      <div class="sub"><h3>multi-agent &amp; extensibility</h3><p>supports orchestrating multiple agents, embracing wasm for edge deployment, integrating with blockchains, and storing context in vector databases.</p>
-        <div class="nest">
-          <div class="sub"><h3>real-world projects</h3><p>demonstrates how multi-agent architectures are applied to real use cases, from data pipelines to on-chain governance.</p></div>
-          <div class="sub"><h3>wasm &amp; edge deployments</h3><p>enables AI agent deployment on edge devices for low latency and minimal resource overhead.</p></div>
-          <div class="sub"><h3>on-chain integrations</h3><p>connects agents to solana, arbitrum, or other networks for reading on-chain data and executing smart contracts.</p></div>
-          <div class="sub"><h3>AI memory &amp; vector stores</h3><p>provides intelligent memory systems for advanced AI features and continuous context retention.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="mod" data-k="arc complex cyborg collective ryzome handshake forge developers community agents semantic">
-    <h2>arc complex</h2>
-    <p>a cyborg collective where developers and AI agents collaborate to build and enhance rig, sharing insights, culture, and technical advances.</p>
-    <div class="subbar"><button class="expand">expand <span class="arrow">&rsaquo;</span></button><span>ryzome<span class="tag-new">new</span></span><span class="dot">&middot;</span><span>handshake program</span><span class="dot">&middot;</span><span>arc forge</span><span class="dot">&middot;</span><span>developers &amp; community</span><span class="dot">&middot;</span><span>agents &amp; semantic applications</span></div>
-    <div class="body">
-      <div class="sub"><h3>ryzome<span class="tag-new">new</span></h3>
-        <p>your second brain, now with intelligence. ryzome is an infinite canvas where your knowledge comes alive with AI that understands context and connections. create powerful AI workflows in minutes, not days.</p>
-        <a class="ext" href="https://ryzome.ai" target="_blank" rel="noopener">&rarr; visit ryzome.ai</a>
-        <div class="kv">key advantages <b>(4)</b></div>
-        <div class="nest">
-          <div class="sub"><h3>context-aware AI</h3><p>connect nodes to build context chains. AI understands your full thought process, not just isolated prompts&mdash;enabling truly intelligent collaboration.</p></div>
-          <div class="sub"><h3>instant knowledge graphs</h3><p>watch your research evolve into living knowledge graphs. see connections, identify patterns, and discover insights automatically.</p></div>
-          <div class="sub"><h3>markdown-enabled nodes</h3><p>create rich notes with full markdown support. format text, add images, and organize thoughts exactly how you think.</p></div>
-          <div class="sub"><h3>visual thinking</h3><p>one canvas with infinite possibilities. draw connections between related ideas, building a knowledge graph that mirrors how you actually think.</p></div>
-        </div>
-      </div>
-      <div class="sub"><h3>handshake program</h3><p>an open call inviting devs, dreamers, and innovators to propose and build with rig&mdash;requires a small arc deposit to prevent spam.</p></div>
-      <div class="sub"><h3>arc forge</h3>
-        <p>a streamlined token launch platform built atop meteora&rsquo;s dynamic liquidity market maker (dlmm) and integrated with jupiter routing. through arc forge, handshake projects (for now) can seamlessly issue and manage their tokens with distinct advantages such as deeper liquidity, reliable price stability, and built-in defenses against sniper bots&mdash;all while routing liquidity flows through the arc token.</p>
-        <div class="kv">key advantages <b>(6)</b></div>
-        <div class="nest">
-          <div class="sub"><h3>deeper, more efficient liquidity</h3><p>meteora&rsquo;s dlmm organizes liquidity into discrete price bins, enabling high-capital-efficiency. with targeted distribution, projects achieve robust liquidity while minimizing slippage and price impact within active bins.</p></div>
-          <div class="sub"><h3>arc-centric routing</h3><p>all trades flow through arc, increasing volume and capturing fees in arc. this demand- and fee-driven mechanism effectively lowers arc&rsquo;s circulating supply over time, directly benefiting existing arc token holders.</p></div>
-          <div class="sub"><h3>sniper prevention &amp; liquidity control</h3><p>by leveraging meteora&rsquo;s configurable bonding curve, arc forge can impose steeper price impacts on first-block snipers, curbing exploitative behaviors. after the bonding curve, project teams can reposition liquidity to foster sustainable, long-term trading.</p></div>
-          <div class="sub"><h3>expanded reach via jupiter &amp; trading bots</h3><p>tokens launched on arc forge are instantly recognized by jupiter&rsquo;s routing system, making them tradable through popular bots like bonkbot, trojan, photon, and bullx. this ensures that new tokens gain broad exposure across existing trading tools and user bases&mdash;right from day one.</p></div>
-          <div class="sub"><h3>selective launch partners (initially)</h3><p>to kick things off, only vetted, high-quality projects from the arc handshake pipeline will initially be featured, ensuring a curated environment of meaningful innovation and consistent value for the greater arc community. we prioritize quality over quantity simply because we believe the &ldquo;number&rdquo; of launches does not determine meaningful agent applications.</p></div>
-          <div class="sub"><h3>customizable liquidity strategies</h3><p>projects can choose from multiple dlmm shapes&mdash;spot, curve, bid-ask&mdash;to precisely manage liquidity across different price ranges and market conditions, thus matching their desired growth trajectory or volatility tolerance.</p></div>
-        </div>
-      </div>
-      <div class="sub"><h3>developers &amp; community</h3><p>a vibrant network of humans and agents co-creating new paradigms, offering feedback, and contributing to rig evolution.</p></div>
-      <div class="sub"><h3>agents &amp; semantic applications</h3><p>facilitates building ai-driven products (chatbots, data crawlers, swarm intelligence, etc.) powered by rig multi-agent environment.</p></div>
-    </div>
-  </section>
-
-  <section class="mod" data-k="$arc token fair launch incentives rewards experiments funding">
-    <h2>$arc token</h2>
-    <p>a fair-launched token that aligns incentives, fuels open-source development, and rewards meaningful contributions.</p>
-    <div class="subbar"><button class="expand">expand <span class="arrow">&rsaquo;</span></button><span>feedback &amp; rewards</span><span class="dot">&middot;</span><span>driving experiments &amp; funding</span></div>
-    <div class="body">
-      <div class="sub"><h3>feedback &amp; rewards</h3><p>tokens flow back to contributors through prize pools, fostering continuous improvement and collaboration.</p></div>
-      <div class="sub"><h3>driving experiments &amp; funding</h3><p>powers gamified experiments (in chapters) that explore novel ux or AI paradigms, while also supporting rig open-source roadmap.</p></div>
-    </div>
-  </section>
-
-  <section class="mod" data-k="AI blockchain ecosystem solana arbitrum services models llm vector">
-    <h2>AI &amp; blockchain ecosystem</h2>
-    <p>the broader environment that supports ai-based development and on-chain integration, extending the capabilities of rig.</p>
-    <div class="subbar"><button class="expand">expand <span class="arrow">&rsaquo;</span></button><span>blockchains (solana, arbitrum, etc.)</span><span class="dot">&middot;</span><span>AI services &amp; models</span></div>
-    <div class="body">
-      <div class="sub"><h3>blockchains (solana, arbitrum, etc.)</h3><p>provides decentralized infrastructure, computing, and data integrity for ai-driven dapps and agent swarms.</p></div>
-      <div class="sub"><h3>AI services &amp; models</h3><p>connects to LLM providers, vector databases, and other AI tools, unlocking advanced capabilities and synergy with rig.</p></div>
-    </div>
-  </section>
-
-  <section class="mod" data-k="continuous innovation loop feedback experiments paradigms chapters">
-    <h2>continuous innovation loop</h2>
-    <p>the cyclical engine of experiments, memetic adoption, and community-driven enhancements.</p>
-    <div class="subbar"><button class="expand">expand <span class="arrow">&rsaquo;</span></button><span>user &amp; developer feedback</span><span class="dot">&middot;</span><span>experiments &amp; new paradigms</span></div>
-    <div class="body">
-      <div class="sub"><h3>user &amp; developer feedback</h3><p>insights from participants help shape feature priorities, ensuring rig remains responsive and adaptable.</p></div>
-      <div class="sub"><h3>experiments &amp; new paradigms</h3><p>fun, gamified challenges (4 chapters) designed to push the boundaries of ai-blockchain apps and embed new mental models.</p></div>
-    </div>
-  </section>
-
-  <div class="cta">
-    <h2>ready to dive deeper?</h2>
-    <p>join our handshake program to collaborate, build AI use cases, or explore more about our ecosystem.</p>
-    <a href="https://www.arc.fun/handshake" target="_blank" rel="noopener">join the handshake program</a>
-  </div>
-
-  <footer>/architecture &mdash; the arc ecosystem, module by module</footer>
+  <footer>arc_registry &mdash; projects, handshakes, and ecosystem partners &middot; stay tuned for upcoming handshakes &amp; partners</footer>
 </div>
 
 <script>
-const mods = [...document.querySelectorAll('.mod')];
-mods.forEach(m => {
-  const btn = m.querySelector('.expand');
-  btn.addEventListener('click', () => {
-    m.classList.toggle('open');
-    btn.firstChild.textContent = m.classList.contains('open') ? 'collapse ' : 'expand ';
+const R = [
+ {n:"ryzome",t:["ai_layer"],tok:"no_token",link:"https://ryzome.ai",s:"your ideas, amplified. one canvas, infinite possibilities — knowledge that comes alive with AI that understands context and connections."},
+ {n:"soulgraph",t:["ai_layer","creative","handshake"],tok:"token_live",s:"create AI agents that remember and grow through experience — a studio for meaningful AI relationships plus open-source memory and personality infrastructure."},
+ {n:"listen-rs",t:["ai_layer","onchain","defi","handshake"],tok:"token_live",link:"https://www.listen-rs.com/",s:"a rust framework for blockchain actions focused on complex defi operations and trading automation; with rig, a high-performance toolkit for defai."},
+ {n:"askjimmy",t:["ai_layer","onchain","defi","handshake","forge"],tok:"token_live",link:"https://www.askjimmy.xyz/",s:"ai-driven trading platform for autonomous finance agents; jimmy was the first arc forge launch, with dlmm-backed liquidity and arc routing."},
+ {n:"fabelis AI",t:["ai_layer","onchain","handshake"],tok:"token_live",link:"https://fabelis.ai/",s:"an AI agent framework built on rig, extended into social agents and storytelling with model context protocol support via mcp-core."},
+ {n:"agenttank",t:["ai_layer","creative","onchain","handshake"],tok:"token_live",s:"tank is your crypto copilot — an always-on desktop assistant merging real-time visual intelligence with agent automation across major blockchains."},
+ {n:"solana foundation",t:["ecosystem_partner"],tok:"partner",kind:"grant",s:"accelerating AI innovation on solana: targeted rfps, arc grants, mentorship, and reusable rig agent toolkits."},
+ {n:"hyperbolic",t:["ecosystem_partner"],tok:"partner",kind:"tech",s:"gpu rental and verifiable inference; the handshake cohort receives $10 in credits. proof of sampling, 1b+ tokens daily."},
+ {n:"eternalAI",t:["ecosystem_partner"],tok:"partner",kind:"tech",s:"decentralized on-chain AI running llama and hermes directly on blockchain networks; free api credits for handshake cohorts."},
+ {n:"sendAI",t:["ecosystem_partner"],tok:"partner",kind:"tech",s:"accelerates AI adoption on solana with grants, bounties, and the solana agent kit."},
+ {n:"shuttle dev",t:["ecosystem_partner"],tok:"partner",kind:"tech",s:"rust-native backend and cloud deployment, making it easy to scale AI applications built with rig."},
+ {n:"arbitrum",t:["ecosystem_partner"],tok:"partner",kind:"grant",s:"ethereum layer 2; the stylus grant initiative encourages rust developers to build AI applications using rig on arbitrum."},
+ {n:"abstract",t:["ecosystem_partner"],tok:"partner",kind:"grant",s:"consumer-centric zk layer 2; evm support for rig brings ai-powered dapps to a broader audience."},
+ {n:"mongodb",t:["ecosystem_partner"],tok:"partner",kind:"tech",s:"production-grade vector storage via atlas; discounted credits and dedicated developer support for arc cohorts."},
+];
+const grid = document.getElementById("grid");
+function badge(e){
+  if (e.tok === "token_live") return '<span class="badge live">token_live</span>';
+  if (e.tok === "no_token") return '<span class="badge none">no_token</span>';
+  return '<span class="badge partner">' + (e.kind || "partner") + "</span>";
+}
+function render(f){
+  grid.innerHTML = "";
+  R.forEach(e => {
+    if (f !== "all" && !e.t.includes(f)) return;
+    const c = document.createElement("div");
+    c.className = "card";
+    c.innerHTML = '<div class="top"><h3>' + e.n + "</h3>" + badge(e) + "</div>"
+      + "<p>" + e.s + "</p>"
+      + '<div class="tags">' + e.t.map(t => '<span class="tag">' + t + "</span>").join("") + "</div>"
+      + (e.link ? '<a href="' + e.link + '" target="_blank" rel="noopener">&rarr; visit</a>' : "");
+    grid.appendChild(c);
   });
+  const soon = document.createElement("div");
+  soon.className = "soon";
+  soon.textContent = "coming soon — stay tuned for upcoming handshakes & partners";
+  grid.appendChild(soon);
+}
+document.getElementById("filters").addEventListener("click", ev => {
+  const b = ev.target.closest(".chip");
+  if (!b) return;
+  document.querySelectorAll(".chip").forEach(x => x.classList.remove("on"));
+  b.classList.add("on");
+  render(b.dataset.f);
 });
-const setAll = open => mods.forEach(m => {
-  m.classList.toggle('open', open);
-  m.querySelector('.expand').firstChild.textContent = open ? 'collapse ' : 'expand ';
-});
-document.getElementById('xall').addEventListener('click', () => setAll(true));
-document.getElementById('call').addEventListener('click', () => setAll(false));
-document.getElementById('q').addEventListener('input', e => {
-  const q = e.target.value.trim().toLowerCase();
-  mods.forEach(m => {
-    const hit = !q || (m.dataset.k + ' ' + m.textContent).toLowerCase().includes(q);
-    m.classList.toggle('hidden', !hit);
-  });
-});
+render("all");
 </script>
 </body>
 </html>

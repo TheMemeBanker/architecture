@@ -1,59 +1,73 @@
-# /architecture
+# arc_registry
 
-discover the core components of our ecosystem and how they work together to power innovative AI applications and semantic software. dive into the details of each module to explore its purpose, functionality, and integration within the arc framework.
+**total handshakes: 6**
 
-## the ecosystem at a glance
+the arc registry tracks three types of relationships:
+
+| type | meaning |
+|---|---|
+| **projects** | all things built with rig, arc's agent & llm framework |
+| **handshakes** | projects & teams that successfully completed the arc handshake vetting process |
+| **ecosystem_partners** | organizations and infrastructure providers supporting builders in the arc handshake program ecosystem |
+
+## the registry at a glance
 
 ```mermaid
-flowchart TD
-    RIG[rig framework] --> CORE[core library]
-    RIG --> MA[multi-agent & extensibility]
-    MA --> RWP[real-world projects]
-    MA --> WASM[wasm & edge deployments]
-    MA --> CHAIN[on-chain integrations]
-    MA --> MEM[AI memory & vector stores]
+flowchart LR
+    RIG[rig framework] --- REG[(arc_registry)]
+    REG --> P[projects]
+    REG --> H[handshakes]
+    REG --> E[ecosystem_partners]
 
-    COMPLEX[arc complex] --> RYZ[ryzome]
-    COMPLEX --> HAND[handshake program]
-    COMPLEX --> FORGE[arc forge]
-    COMPLEX --> DEV[developers & community]
-    COMPLEX --> AGENTS[agents & semantic applications]
+    P --> RYZ[ryzome]
+    H --> SG[soulgraph]
+    H --> LRS[listen-rs]
+    H --> AJ[askjimmy]
+    H --> FAB[fabelis AI]
+    H --> AT[agenttank]
 
-    TOKEN[$arc token] --> FB[feedback & rewards]
-    TOKEN --> EXP[driving experiments & funding]
-
-    ECO[AI & blockchain ecosystem] --> BC[blockchains: solana, arbitrum]
-    ECO --> AIS[AI services & models]
-
-    LOOP[continuous innovation loop] --> UDF[user & developer feedback]
-    LOOP --> NP[experiments & new paradigms]
-
-    DEV --> RIG
-    TOKEN --> COMPLEX
-    ECO --> RIG
-    LOOP --> RIG
+    E --> SOL[solana foundation]
+    E --> HYP[hyperbolic]
+    E --> ETR[eternalAI]
+    E --> SND[sendAI]
+    E --> SHU[shuttle dev]
+    E --> ARB[arbitrum]
+    E --> ABS[abstract]
+    E --> MDB[mongodb]
 ```
 
-## modules
+## projects & handshakes
 
-| module | doc | one-liner |
+| entry | status | tags | doc |
+|---|---|---|---|
+| ryzome | no_token | AI_layer | [projects/ryzome.md](projects/ryzome.md) |
+| soulgraph | token_live | AI_layer · creative · handshake | [projects/soulgraph.md](projects/soulgraph.md) |
+| listen-rs | token_live | AI_layer · onchain · defi · handshake | [projects/listen-rs.md](projects/listen-rs.md) |
+| askjimmy | token_live | AI_layer · onchain · defi · handshake · forge | [projects/askjimmy.md](projects/askjimmy.md) |
+| fabelis AI | token_live | AI_layer · onchain · handshake | [projects/fabelis-ai.md](projects/fabelis-ai.md) |
+| agenttank | token_live | AI_layer · creative · onchain · handshake | [projects/agenttank.md](projects/agenttank.md) |
+
+## ecosystem partners
+
+| partner | kind | doc |
 |---|---|---|
-| rig framework | [modules/rig-framework.md](modules/rig-framework.md) | the foundational rust-based system for building and orchestrating AI agents |
-| arc complex | [modules/arc-complex.md](modules/arc-complex.md) | a cyborg collective of developers and AI agents building on rig |
-| ryzome | [modules/ryzome.md](modules/ryzome.md) | your second brain, now with intelligence — an infinite AI canvas |
-| handshake program | [modules/handshake-program.md](modules/handshake-program.md) | an open call to propose and build with rig |
-| arc forge | [modules/arc-forge.md](modules/arc-forge.md) | token launch platform on meteora dlmm with jupiter routing |
-| $arc token | [modules/arc-token.md](modules/arc-token.md) | fair-launched token aligning incentives across the ecosystem |
-| AI & blockchain ecosystem | [modules/ai-blockchain-ecosystem.md](modules/ai-blockchain-ecosystem.md) | the broader environment extending rig's capabilities |
-| continuous innovation loop | [modules/continuous-innovation-loop.md](modules/continuous-innovation-loop.md) | the cyclical engine of experiments and community enhancements |
+| solana foundation | grant | [partners/solana-foundation.md](partners/solana-foundation.md) |
+| hyperbolic | tech | [partners/hyperbolic.md](partners/hyperbolic.md) |
+| eternalAI | tech | [partners/eternalai.md](partners/eternalai.md) |
+| sendAI | tech | [partners/sendai.md](partners/sendai.md) |
+| shuttle dev | tech | [partners/shuttle-dev.md](partners/shuttle-dev.md) |
+| arbitrum | grant | [partners/arbitrum.md](partners/arbitrum.md) |
+| abstract | grant | [partners/abstract.md](partners/abstract.md) |
+| mongodb | tech | [partners/mongodb.md](partners/mongodb.md) |
+
+## filter taxonomy
+
+`all projects` · `ai_layer` · `creative` · `onchain` · `defi` · `microcontrollers` · `handshake` · `forge` · `ecosystem_partner`
 
 ## more
 
-- [model-providers.md](model-providers.md) — the LLM providers the framework connects to
-- [data/architecture.json](data/architecture.json) — the full module tree, machine-readable
-- [`$arch token`](%24arch%20token) — the $ARCH token doc (mint + market link TBD)
-- [index.html](index.html) — the interactive one-page version of this architecture
+- [data/registry.json](data/registry.json) — the full registry, machine-readable
+- [`$registry token`](%24registry%20token) — the $REGISTRY token doc (mint + market link TBD)
+- [index.html](index.html) — the interactive registry page
 
-## ready to dive deeper?
-
-join our handshake program to collaborate, build AI use cases, or explore more about our ecosystem.
+coming soon — stay tuned for upcoming handshakes & partners.

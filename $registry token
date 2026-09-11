@@ -1,0 +1,15 @@
+# $registry token
+
+the token layer of the arc_registry — aligning incentives across projects, handshakes, and ecosystem partners.
+
+## utility
+
+- registry listing deposits (spam prevention, mirroring the handshake arc-deposit model)
+- rewards flowing back to vetted builders through prize pools
+- routing and fee capture as registry projects launch and trade
+
+## details
+
+- ticker: $REGISTRY
+- mint: TBD (to be supplied at launch)
+- market link: TBD

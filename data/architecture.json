@@ -1,0 +1,90 @@
+{
+  "title": "/architecture",
+  "intro": "discover the core components of our ecosystem and how they work together to power innovative AI applications and semantic software.",
+  "model_providers": ["anthropic", "deepseek", "gemini", "ollama", "openai", "perplexity"],
+  "modules": [
+    {
+      "id": "rig-framework",
+      "name": "rig framework",
+      "summary": "the foundational rust-based system for building and orchestrating powerful, lightweight AI agents. it provides core libraries, multi-agent support, and on-chain integrations.",
+      "link": "https://github.com/0xPlaygrounds/rig",
+      "children": [
+        { "id": "core-library", "name": "core library", "summary": "essential utilities to create AI agents, manage prompts, handle embeddings, and maintain robust performance." },
+        {
+          "id": "multi-agent-extensibility",
+          "name": "multi-agent & extensibility",
+          "summary": "supports orchestrating multiple agents, embracing wasm for edge deployment, integrating with blockchains, and storing context in vector databases.",
+          "children": [
+            { "id": "real-world-projects", "name": "real-world projects", "summary": "demonstrates how multi-agent architectures are applied to real use cases, from data pipelines to on-chain governance." },
+            { "id": "wasm-edge", "name": "wasm & edge deployments", "summary": "enables AI agent deployment on edge devices for low latency and minimal resource overhead." },
+            { "id": "on-chain", "name": "on-chain integrations", "summary": "connects agents to solana, arbitrum, or other networks for reading on-chain data and executing smart contracts." },
+            { "id": "ai-memory", "name": "AI memory & vector stores", "summary": "provides intelligent memory systems for advanced AI features and continuous context retention." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arc-complex",
+      "name": "arc complex",
+      "summary": "a cyborg collective where developers and AI agents collaborate to build and enhance rig, sharing insights, culture, and technical advances.",
+      "children": [
+        {
+          "id": "ryzome",
+          "name": "ryzome",
+          "tag": "new",
+          "summary": "your second brain, now with intelligence. an infinite canvas where knowledge comes alive with AI that understands context and connections.",
+          "link": "https://ryzome.ai",
+          "key_advantages": [
+            { "name": "context-aware AI", "summary": "connect nodes to build context chains so AI understands the full thought process, not just isolated prompts." },
+            { "name": "instant knowledge graphs", "summary": "research evolves into living knowledge graphs — connections, patterns, and insights surface automatically." },
+            { "name": "markdown-enabled nodes", "summary": "rich notes with full markdown support: format text, add images, organize thoughts." },
+            { "name": "visual thinking", "summary": "one canvas with infinite possibilities; draw connections between related ideas." }
+          ]
+        },
+        { "id": "handshake-program", "name": "handshake program", "summary": "an open call inviting devs, dreamers, and innovators to propose and build with rig — requires a small arc deposit to prevent spam." },
+        {
+          "id": "arc-forge",
+          "name": "arc forge",
+          "summary": "a streamlined token launch platform built atop meteora's dlmm and integrated with jupiter routing, routing liquidity flows through the arc token.",
+          "key_advantages": [
+            { "name": "deeper, more efficient liquidity", "summary": "dlmm price bins enable high capital efficiency with minimal slippage in active bins." },
+            { "name": "arc-centric routing", "summary": "all trades flow through arc, capturing fees in arc and lowering circulating supply over time." },
+            { "name": "sniper prevention & liquidity control", "summary": "configurable bonding curve imposes steeper price impacts on first-block snipers." },
+            { "name": "expanded reach via jupiter & trading bots", "summary": "instant recognition by jupiter routing; tradable through bonkbot, trojan, photon, bullx from day one." },
+            { "name": "selective launch partners (initially)", "summary": "only vetted, high-quality handshake projects featured at first — quality over quantity." },
+            { "name": "customizable liquidity strategies", "summary": "multiple dlmm shapes — spot, curve, bid-ask — to manage liquidity across price ranges." }
+          ]
+        },
+        { "id": "developers-community", "name": "developers & community", "summary": "a vibrant network of humans and agents co-creating new paradigms and contributing to rig evolution." },
+        { "id": "agents-semantic", "name": "agents & semantic applications", "summary": "facilitates building ai-driven products — chatbots, data crawlers, swarm intelligence — powered by the rig multi-agent environment." }
+      ]
+    },
+    {
+      "id": "arc-token",
+      "name": "$arc token",
+      "summary": "a fair-launched token that aligns incentives, fuels open-source development, and rewards meaningful contributions.",
+      "children": [
+        { "id": "feedback-rewards", "name": "feedback & rewards", "summary": "tokens flow back to contributors through prize pools." },
+        { "id": "experiments-funding", "name": "driving experiments & funding", "summary": "powers gamified experiments in chapters while supporting the rig open-source roadmap." }
+      ]
+    },
+    {
+      "id": "ai-blockchain-ecosystem",
+      "name": "AI & blockchain ecosystem",
+      "summary": "the broader environment that supports ai-based development and on-chain integration, extending the capabilities of rig.",
+      "children": [
+        { "id": "blockchains", "name": "blockchains (solana, arbitrum, etc.)", "summary": "decentralized infrastructure, computing, and data integrity for ai-driven dapps and agent swarms." },
+        { "id": "ai-services", "name": "AI services & models", "summary": "LLM providers, vector databases, and other AI tools in synergy with rig." }
+      ]
+    },
+    {
+      "id": "continuous-innovation-loop",
+      "name": "continuous innovation loop",
+      "summary": "the cyclical engine of experiments, memetic adoption, and community-driven enhancements.",
+      "children": [
+        { "id": "user-developer-feedback", "name": "user & developer feedback", "summary": "participant insights shape feature priorities." },
+        { "id": "experiments-paradigms", "name": "experiments & new paradigms", "summary": "gamified challenges (4 chapters) that push the boundaries of ai-blockchain apps." }
+      ]
+    }
+  ]
+}

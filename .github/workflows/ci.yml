@@ -1,0 +1,26 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: validate registry data (schema + structure)
+        run: python3 tools/validate_registry.py
+
+      - name: js sdk tests
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --test sdk/js/registry.test.mjs
+
+      - name: rust build + tests
+        uses: dtolnay/rust-toolchain@stable
+      - run: cargo test --all-targets
+      - run: cargo run -q -- validate

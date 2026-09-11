@@ -8,7 +8,7 @@
   },
   "tags": ["ai_layer", "creative", "onchain", "defi", "microcontrollers", "handshake", "forge", "ecosystem_partner", "grant", "tech"],
   "entries": [
-    { "id": "ryzome", "name": "ryzome", "type": "project", "token": "no_token", "tags": ["ai_layer"], "link": "https://ryzome.ai", "summary": "your ideas, amplified. one canvas, infinite possibilities — knowledge that comes alive with AI that understands context and connections." },
+    { "id": "ryzome", "name": "ryzome", "type": "handshake", "token": "no_token", "tags": ["ai_layer"], "link": "https://ryzome.ai", "summary": "your ideas, amplified. one canvas, infinite possibilities — knowledge that comes alive with AI that understands context and connections." },
     { "id": "soulgraph", "name": "soulgraph", "type": "handshake", "token": "token_live", "tags": ["ai_layer", "creative", "handshake"], "summary": "create AI agents that remember and grow through experience — a studio for meaningful AI relationships plus open-source memory/personality infrastructure." },
     { "id": "listen-rs", "name": "listen-rs", "type": "handshake", "token": "token_live", "tags": ["ai_layer", "onchain", "defi", "handshake"], "link": "https://www.listen-rs.com/", "summary": "a rust framework for blockchain actions focused on complex defi operations and trading automation; with rig, a toolkit for defai applications." },
     { "id": "askjimmy", "name": "askjimmy", "type": "handshake", "token": "token_live", "tags": ["ai_layer", "onchain", "defi", "handshake", "forge"], "link": "https://www.askjimmy.xyz/", "summary": "ai-driven trading platform for autonomous finance agents; jimmy was the first arc forge launch, with dlmm-backed liquidity and arc routing." },

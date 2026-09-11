@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "arc_registry",
+  "type": "object",
+  "required": ["title", "total_handshakes", "types", "tags", "entries"],
+  "properties": {
+    "title": { "type": "string" },
+    "total_handshakes": { "type": "integer" },
+    "types": { "type": "object" },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "type", "tags", "summary"],
+        "properties": {
+          "id": { "type": "string", "pattern": "[a-z0-9-]+" },
+          "name": { "type": "string" },
+          "type": { "type": "string", "enum": ["project", "handshake", "ecosystem_partner"] },
+          "token": { "type": "string", "enum": ["token_live", "no_token"] },
+          "tags": { "type": "array", "items": { "type": "string" } },
+          "link": { "type": "string", "pattern": "https?://.+" },
+          "summary": { "type": "string" }
+        }
+      }
+    }
+  }
+}
